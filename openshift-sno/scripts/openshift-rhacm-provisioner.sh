@@ -80,5 +80,5 @@ vbmc add --port 6270 --username USERID --password PASSW0RD --libvirt-uri=qemu+ss
 vbmc start openshift-sno-dev
 vbmc list
 
-
+ipmitool -I lanplus -H localhost -p 6270 -U USERID -P PASSW0RD chassis power status
 
