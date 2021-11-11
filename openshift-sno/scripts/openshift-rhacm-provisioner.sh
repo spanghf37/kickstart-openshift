@@ -4,7 +4,7 @@
 
 # Create a non-root user (user-name) and provide that user with sudo privileges by running the following commands:
 useradd kni
-passwd
+passwd kni
 echo "kni ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/kni
 chmod 0440 /etc/sudoers.d/kni
 
