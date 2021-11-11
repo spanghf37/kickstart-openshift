@@ -51,7 +51,7 @@ sudo nohup bash -c """
     nmcli con delete "$PUB_CONN"
     nmcli connection add ifname baremetal type bridge con-name baremetal
     nmcli con add type bridge-slave ifname "$PUB_CONN" master baremetal
-    nmcli connection modify baremetal ipv4.addresses 192.168.122.52/24 ipv4.dns 192.168.122.1 ipv4.method manual
+    nmcli connection modify baremetal ipv4.addresses 192.168.122.52/24 ipv4.dns 192.168.122.1 ipv4.gateway 192.168.122.1 ipv4.method manual
     nmcli con down baremetal
     nmcli con up baremetal"""
 
