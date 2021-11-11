@@ -63,3 +63,16 @@ nmcli con show
 # Copy pull-secret in a file "pull-secret" inside "/home/kni" on the provisioner host.
 
 
+sudo dnf update -y
+sudo dnf install -y python3 python3-devel libvirt-devel gcc git OpenIPMI ipmitool jq
+sudo dnf groupinstall -y "Development Tools"
+
+sudo dnf install -y libvirt-devel
+pip3 install --upgrade pip
+pip3 install setuptools_rust
+pip3 install wheel
+pip3 install libvirt
+pip3 install virtualbmc
+
+
+
