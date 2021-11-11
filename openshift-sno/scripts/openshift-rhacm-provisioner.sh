@@ -76,7 +76,7 @@ pip3 install virtualbmc
 
 
 ssh-copy-id USERNAME_LIBVIRT_HOST@192.168.122.1
-vbmc add --port 6270 --username USER --password PASSW0RD --libvirt-uri=qemu+ssh://USERNAME_LIBVIRT_HOST@192.168.122.1/system openshift-sno-dev
+vbmc add --port 6270 --username USERID --password PASSW0RD --libvirt-uri=qemu+ssh://USERNAME_LIBVIRT_HOST@192.168.122.1/system openshift-sno-dev
 vbmc start openshift-sno-dev
 vbmc list
 
