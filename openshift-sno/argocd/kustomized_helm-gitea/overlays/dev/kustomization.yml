@@ -4,8 +4,6 @@ kind: Kustomization
 bases:
 - ../../helm_base
 
-namespace: gitea-dev
-
 commonLabels:
   app.kubernetes.io/managed-by: argocd
 
