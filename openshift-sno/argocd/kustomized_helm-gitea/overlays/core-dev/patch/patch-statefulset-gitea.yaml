@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: gitea-dev
+  name: core-dev-gitea
 spec:
   template:
     spec:
-      serviceAccount: gitea-dev
+      serviceAccount: core-dev-gitea

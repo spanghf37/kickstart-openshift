@@ -1,12 +1,12 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: gitea-dev
+  name: core-dev-gitea
 spec:
-  host: gitea-dev.apps.openshift-sno-001.colbert.def
+  host: core-dev-gitea.apps.openshift-sno-001.colbert.def
   to:
     kind: Service
-    name: gitea-dev-http
+    name: core-dev-gitea-http
     weight: 100
   port:
     targetPort: http
