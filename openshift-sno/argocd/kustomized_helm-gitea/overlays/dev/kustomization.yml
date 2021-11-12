@@ -18,10 +18,3 @@ resources:
 patches:
 - path: patch/patch-statefulset-gitea.yml
 - path: patch/patch-statefulset-gitea-postgresql.yml
-
-secretGenerator:
-- files:
-  - app.ini=secret/app.ini-conf.yml
-  name: gitea-dev
-  namespace: gitea-dev
-  type: Opaque
