@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  host: gitea-gitea.apps.openshift-sno-001.colbert.def
+  to:
+    kind: Service
+    name: gitea-http
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
