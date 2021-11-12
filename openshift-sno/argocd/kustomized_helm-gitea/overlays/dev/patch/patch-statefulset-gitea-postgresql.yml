@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: gitea-postgresql
+  name: gitea-dev-postgresql
 spec:
   template:
     spec:
-      serviceAccount: gitea
+      serviceAccount: gitea-dev

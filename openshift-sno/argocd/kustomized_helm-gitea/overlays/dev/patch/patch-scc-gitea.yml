@@ -5,8 +5,8 @@ allowPrivilegedContainer: true
 runAsUser:
   type: RunAsAny
 users:
-  - 'system:serviceaccount:gitea:gitea'
-  - 'system:serviceaccount:gitea:gitea-memcached'
+  - 'system:serviceaccount:gitea-dev:gitea-dev'
+  - 'system:serviceaccount:gitea-dev:gitea-dev-memcached'
 allowHostDirVolumePlugin: true
 seccompProfiles:
   - '*'
@@ -15,7 +15,7 @@ seLinuxContext:
   type: RunAsAny
 readOnlyRootFilesystem: false
 metadata:
-  name: app-gitea
+  name: app-gitea-dev
 fsGroup:
   type: RunAsAny
 kind: SecurityContextConstraints
