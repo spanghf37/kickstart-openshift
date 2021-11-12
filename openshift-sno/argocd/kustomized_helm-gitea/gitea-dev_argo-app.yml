@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea-dev
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: gitea-dev
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: openshift-sno/argocd/kustomized_helm-gitea/overlays/dev
+    plugin:
+      name: kustomized-helm
+    repoURL: 'https://github.com/spanghf37/kickstart-openshift.git'
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}

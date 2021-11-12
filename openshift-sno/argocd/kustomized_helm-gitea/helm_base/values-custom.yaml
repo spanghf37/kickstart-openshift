@@ -1,0 +1,6 @@
+gitea:
+  admin:
+    #existingSecret: gitea-admin-secret
+    username: gitea_admin
+    password: r8sA8CPHD9!bt6da
+    email: "gitea@local.domain"
