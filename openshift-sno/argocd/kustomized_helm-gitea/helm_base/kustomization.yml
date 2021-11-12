@@ -6,10 +6,3 @@ commonLabels:
 
 resources:
 - all.yml
-- ../kustomize_base/base-route-gitea.yml
-- ../kustomize_base/base-serviceaccount-gitea.yml
-- ../kustomize_base/base-scc-gitea.yml
-
-patches:
-- path: ../kustomize_patch/patch-statefulset-gitea.yml
-- path: ../kustomize_patch-statefulset-gitea-postgresql.yml
