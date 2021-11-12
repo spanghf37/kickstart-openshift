@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- gitea.yaml
+- gitea-base-scc-gitea.yaml
+- gitea-base-serviceaccount-gitea.yaml
+patches:
+- path: gitea-patch-statefulset-gitea.yaml
+- path: gitea-patch-statefulset-gitea-postgresql.yaml
