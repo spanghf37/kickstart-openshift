@@ -24,5 +24,4 @@ secretGenerator:
   - app.ini=secret/app.ini-conf.yml
   name: gitea
   namespace: gitea-dev
-  behavior: replace
   type: Opaque
