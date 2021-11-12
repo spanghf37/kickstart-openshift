@@ -15,4 +15,4 @@ resources:
 
 patches:
 - path: patch/patch-statefulset-gitea.yml
-- path: patch/patch-statefulset-gitea-postgresql.yml
+#- path: patch/patch-statefulset-gitea-postgresql.yml
