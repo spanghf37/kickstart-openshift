@@ -22,6 +22,6 @@ patches:
 secretGenerator:
 - files:
   - app.ini=secret/app.ini-conf.yml
-  name: gitea
+  name: gitea-dev
   namespace: gitea-dev
   type: Opaque
