@@ -4,6 +4,7 @@ resources:
 - gitea.yaml
 - gitea-base-scc-gitea.yaml
 - gitea-base-serviceaccount-gitea.yaml
+- gitea-base-route-gitea.yaml
 patches:
 - path: gitea-patch-statefulset-gitea.yaml
 - path: gitea-patch-statefulset-gitea-postgresql.yaml
