@@ -2,13 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: gitea
+  namespace: openshift-gitops
 spec:
   generators:
   - list:
       # Parameters are generated based on this cluster list, to be
       # substituted into the template below.
       elements: 
-      - cluster: core-colbert-dev
+      - cluster: core-dev
         url: 'https://kubernetes.default.svc'
       #- cluster: core-colbert-preprod
       #  url: https://2.4.6.8
@@ -28,6 +29,8 @@ spec:
         targetRevision: HEAD
         # 'cluster' name is also substituted here
         path: openshift-sno/argocd/kustomized_helm-gitea/overlays/{{cluster}}
+        plugin:
+          name: kustomized-helm
       destination:
         # The cluster 'url', used by Argo CD to access the cluster, is 
         # substituted here.
