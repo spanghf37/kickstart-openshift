@@ -9,4 +9,11 @@ commonLabels:
 
 #resources:
 
-#patches:
+patches:
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Route
+      metadata:
+        name: gitea
+      spec:
+        host: gitea.dev.colbert.def       
