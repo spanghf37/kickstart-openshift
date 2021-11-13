@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: core-dev-gitea
+  name: gitea-postgresql
+  namespace: gitea
 spec:
   template:
     spec:
-      serviceAccount: core-dev-gitea
+      serviceAccount: gitea

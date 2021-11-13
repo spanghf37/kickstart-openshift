@@ -21,7 +21,7 @@ spec:
   template: 
     metadata:
       # The 'cluster' parameter from above is substituted here
-      name: '{{cluster}}-gitea'
+      name: 'gitea'
     spec:
       project: '{{cluster}}'
       source:
@@ -35,4 +35,4 @@ spec:
         # The cluster 'url', used by Argo CD to access the cluster, is 
         # substituted here.
         server: '{{url}}'
-        namespace: '{{cluster}}-gitea'
+        namespace: 'gitea'
