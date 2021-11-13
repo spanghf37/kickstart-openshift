@@ -15,5 +15,6 @@ patches:
       kind: Route
       metadata:
         name: gitea
+        namespace: gitea
       spec:
         host: gitea.dev.colbert.def       
