@@ -28,7 +28,7 @@ spec:
         repoURL: 'https://github.com/spanghf37/kickstart-openshift.git'
         targetRevision: HEAD
         # 'cluster' name is also substituted here
-        path: openshift-sno/argocd/kustomized_helm-gitea/overlays/{{cluster}}
+        path: openshift-sno/argocd/gitea/overlays/{{cluster}}
         plugin:
           name: kustomized-helm
       destination:

@@ -6,11 +6,11 @@ commonLabels:
 
 resources:
 - all.yaml
-- base/namespace.yaml
-- base/serviceaccount-gitea.yaml
-- base/base-route-gitea.yaml
-- base/base-scc-gitea.yaml
+- ../../base/namespace.yaml
+- ../../base/serviceaccount-gitea.yaml
+- ../../base/base-route-gitea.yaml
+- ../../base/base-scc-gitea.yaml
 
 patches:
-- path: patch/statefulset-gitea.yaml
-- path: patch/statefulset-gitea-postgresql.yaml
+- path: ../../patch/statefulset-gitea.yaml
+- path: ../../patch/statefulset-gitea-postgresql.yaml
