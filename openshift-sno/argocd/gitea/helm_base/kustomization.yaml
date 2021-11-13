@@ -8,8 +8,8 @@ resources:
 - all.yaml
 - base-namespace.yaml
 - base-serviceaccount-gitea.yaml
-- base-base-route-gitea.yaml
-- base-base-scc-gitea.yaml
+- base-route-gitea.yaml
+- base-scc-gitea.yaml
 
 patches:
 - path: patch-statefulset-gitea.yaml
