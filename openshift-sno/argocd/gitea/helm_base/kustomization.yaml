@@ -6,7 +6,7 @@ commonLabels:
 
 resources:
 - all.yaml
-- kustomize-resource-namespace.yaml
+- kustomize-resource-namespace-gitea.yaml
 - kustomize-resource-serviceaccount-gitea.yaml
 - kustomize-resource-route-gitea.yaml
 - kustomize-resource-scc-gitea.yaml
