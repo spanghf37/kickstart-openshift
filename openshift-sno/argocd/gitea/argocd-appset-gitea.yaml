@@ -36,3 +36,5 @@ spec:
         # substituted here.
         server: '{{url}}'
         namespace: 'gitea'
+      syncPolicy:
+        automated: {}
