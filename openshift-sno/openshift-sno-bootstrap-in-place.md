@@ -79,7 +79,9 @@ We also discussed the process here [during the Ask an OpenShift Admin live strea
    </network>
    ```
 
-   virsh net-destroy baremetal && virsh net-start baremetal
+   ```
+   sudo virsh net-destroy baremetal && sudo virsh net-start baremetal
+   ```
 
    
 1. Create an `install-config.yaml`
