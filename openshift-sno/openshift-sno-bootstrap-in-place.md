@@ -42,7 +42,7 @@ We also discussed the process here [during the Ask an OpenShift Admin live strea
    *.apps.clustername.domain.name
    ```
    
-   # Virsh net config for VM:
+2. Virsh net config for VM:
    
    virsh net-edit baremetal
    
@@ -84,7 +84,7 @@ We also discussed the process here [during the Ask an OpenShift Admin live strea
    ```
 
    
-1. Create an `install-config.yaml`
+3. Create an `install-config.yaml`
    
    Review each field, particularly `networking.machineNetwork.cidr` and `BootstrapInPlace.InstallationDisk` for your environment.
 
@@ -113,7 +113,7 @@ We also discussed the process here [during the Ask an OpenShift Admin live strea
      ssh-ed25519 keygoeshere
    ```
    
-1. Create the Ignition config
+4. Create the Ignition config
    
    ```bash
    # make a copy of the install-config.yaml to use for this
@@ -123,7 +123,7 @@ We also discussed the process here [during the Ask an OpenShift Admin live strea
    openshift-install create single-node-ignition-config --dir=cluster
    ```
    
-1. Create an ISO with the Ignition embedded
+5. Create an ISO with the Ignition embedded
    
    ```bash
    coreos-installer iso ignition embed -f -i cluster/bootstrap-in-place-for-live-iso.ign rhcos-live.x86_64.iso
@@ -131,11 +131,11 @@ We also discussed the process here [during the Ask an OpenShift Admin live strea
    
    This step is technically optional, you can host the bootstrap on a webserver if desired and provide the location to the installer.
 
-1. Boot the node to the ISO, install RHCOS
+6. Boot the node to the ISO, install RHCOS
    
    If you're using a static IP, you can append the `ip=` parameters at the appropriate time. If you have very complex networking, you can boot to the live ISO environment and configure it using `nmcli`/`nmtui`, then install RHCOS with the `--copy-network` option. Otherwise, let it boot and install.
    
-1. Wait for install to complete
+7. Wait for install to complete
    
    Once the node is booted and RHCOS installed, you can monitor it in the usual ways:
    
