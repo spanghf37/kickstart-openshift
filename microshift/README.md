@@ -25,3 +25,6 @@ Editer /etc/crio/crio.conf et préciser le global pull-secret dans la section [c
 [crio.image]
 global_auth_file = "/root/pull-secret.json"
 ~~~
+
+curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.19.1/install.sh | bash -s v0.19.1
+
