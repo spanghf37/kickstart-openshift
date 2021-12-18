@@ -57,7 +57,7 @@ metadata:
   name: console
   namespace: kube-system
 spec:
-  host: console.apps.microshift.colbert.def
+  host: console.microshift.colbert.def
   to:
     kind: Service
     name: console-ci-service
