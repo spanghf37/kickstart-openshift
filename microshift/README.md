@@ -39,3 +39,7 @@ sed -i "s/name: .* # console serviceaccount token/name: \$tokenname # console se
 
 curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.19.1/install.sh | bash -s v0.19.1
 
+Mirror registry:
+
+podman run -d --restart=always -p 5000:5000 --name registry -v /home/user/Téléchargements/skopeo-sync/registry:/var/lib/registry:z registry
+skopeo sync --dest-tls-verify=false --authfile pull-secret.json --all --src yaml --dest docker images-sync.yaml localhost:5000
