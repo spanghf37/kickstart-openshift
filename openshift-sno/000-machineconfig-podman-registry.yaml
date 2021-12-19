@@ -1,0 +1,39 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+  labels:
+    machineconfiguration.openshift.io/role: master
+  name: 99-master-local-registry
+spec:
+  config:
+    ignition:
+      config: {}
+      security:
+        tls: {}
+      timeouts: {}
+      version: 3.1.0
+    networkd: {}
+    passwd: {}
+    systemd:
+      units:
+        - name: container-registry.service
+          enabled: true
+          contents: |
+            [Unit]
+            Description=Local OpenShift Container Registry
+            Wants=network.target
+            After=network-online.target
+            [Service]
+            Environment=PODMAN_SYSTEMD_UNIT=%n
+            Restart=on-failure
+            TimeoutStopSec=70
+            ExecStartPre=/usr/bin/mkdir -p /var/local-registry
+            ExecStartPre=/usr/bin/podman image load -i /var/tmp/docker.io_library_registry_2.7.1.tar && /usr/bin/podman tag "$(echo $(podman import /var/tmp/docker.io_library_registry_2.7.1.tar))" docker.io/library/registry:2.7.1
+            ExecStartPre=/bin/rm -f %t/container-registry.pid %t/container-registry.ctr-id
+            ExecStart=/usr/bin/podman run --conmon-pidfile %t/container-registry.pid --cidfile %t/container-registry.ctr-id --cgroups=no-conmon --replace -d --net=host --name registry -v /var/local-registry:/var/lib/registry:z docker.io/library/registry:2.7.1
+            ExecStop=/usr/bin/podman stop --ignore --cidfile %t/container-registry.ctr-id -t 10
+            ExecStopPost=/usr/bin/podman rm --ignore -f --cidfile %t/container-registry.ctr-id
+            PIDFile=%t/container-registry.pid
+            Type=forking
+            [Install]
+            WantedBy=multi-user.target default.target
