@@ -1,0 +1,10 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  annotations:
+    apps.open-cluster-management.io/reconcile-rate: low
+  name: github-spanghf37-kickstart-openshift
+  namespace: open-cluster-management
+spec:
+  pathname: 'https://github.com/spanghf37/kickstart-openshift.git'
+  type: Git
