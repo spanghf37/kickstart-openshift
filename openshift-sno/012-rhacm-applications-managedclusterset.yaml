@@ -12,5 +12,5 @@
 apiVersion: cluster.open-cluster-management.io/v1alpha1
 kind: ManagedClusterSet
 metadata:
-  name: local-openshift-cluster
+  name: local-openshift-clusters
 spec: {}
