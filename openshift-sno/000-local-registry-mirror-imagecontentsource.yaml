@@ -1,0 +1,14 @@
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: local-registry-mirror
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - services.colbert.def:5000/openshift-release-dev/ocp-release
+    - master.manager.colbert.def:5000/openshift-release-dev/ocp-release
+    source: quay.io/openshift-release-dev/ocp-release
+  - mirrors:
+    - services.colbert.def:5000/openshift-release-dev/ocp-v4.0-art-dev
+    - master.manager.colbert.def:5000/openshift-release-dev/ocp-v4.0-art-dev
+    source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
