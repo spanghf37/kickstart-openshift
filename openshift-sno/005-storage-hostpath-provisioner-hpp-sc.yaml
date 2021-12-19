@@ -1,4 +1,3 @@
----
 apiVersion: hostpathprovisioner.kubevirt.io/v1beta1
 kind: HostPathProvisioner
 metadata:
@@ -18,4 +17,3 @@ metadata:
 provisioner: kubevirt.io/hostpath-provisioner
 reclaimPolicy: Delete 
 volumeBindingMode: WaitForFirstConsumer
----
