@@ -50,3 +50,8 @@ JETSON NANO Microshift :
 
 URL image console quay pour ARM64:
 https://mirror.openshift.com/pub/openshift-v4/aarch64/clients/ocp/latest-4.9/release.txt
+
+
+NFD :
+kubectl apply -k https://github.com/kubernetes-sigs/node-feature-discovery/deployment/overlays/default?ref=v0.9.0
+et editer image pour pointer vers ARM64: image: docker.io/raspbernetes/node-feature-discovery:v0.9.0
