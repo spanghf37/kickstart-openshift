@@ -48,6 +48,9 @@ skopeo sync --dest-tls-verify=false --authfile pull-secret.json --all --src yaml
 
 JETSON NANO Microshift :
 
+https://community.ibm.com/community/user/publiccloud/blogs/alexei-karve/2021/11/23/microshift-2
+https://community.ibm.com/community/user/publiccloud/blogs/alexei-karve/2021/11/23/microshift-3
+
 URL image console quay pour ARM64:
 https://mirror.openshift.com/pub/openshift-v4/aarch64/clients/ocp/latest-4.9/release.txt
 
@@ -55,3 +58,4 @@ https://mirror.openshift.com/pub/openshift-v4/aarch64/clients/ocp/latest-4.9/rel
 NFD :
 kubectl apply -k https://github.com/kubernetes-sigs/node-feature-discovery/deployment/overlays/default?ref=v0.9.0
 et editer image pour pointer vers ARM64: image: docker.io/raspbernetes/node-feature-discovery:v0.9.0
+
