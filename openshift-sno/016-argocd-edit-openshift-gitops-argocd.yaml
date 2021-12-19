@@ -1,4 +1,4 @@
-# Edit "openshift-gitops" instance in argocd customresourcedefinition.
+# Edit "openshift-gitops" instance in argocd customresourcedefinition then delete configmap argocd-tls-certs-cm.
 
 spec:
   initialRepositories: |
