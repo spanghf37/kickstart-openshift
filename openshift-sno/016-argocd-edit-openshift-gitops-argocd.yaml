@@ -2,6 +2,8 @@
 # - delete configmap argocd-tls-certs-cm
 # - delete configmap argocd-cm
 
+#### A faire via kustomize
+
 spec:
   initialRepositories: |
     - type: git
