@@ -43,3 +43,10 @@ Mirror registry:
 
 podman run -d --restart=always -p 5000:5000 --name registry -v /home/user/Téléchargements/skopeo-sync/registry:/var/lib/registry:z registry
 skopeo sync --dest-tls-verify=false --authfile pull-secret.json --all --src yaml --dest docker images-sync.yaml localhost:5000
+
+
+
+JETSON NANO Microshift :
+
+URL image console quay pour ARM64:
+https://mirror.openshift.com/pub/openshift-v4/aarch64/clients/ocp/latest-4.9/release.txt
