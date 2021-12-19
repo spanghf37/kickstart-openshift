@@ -14,3 +14,11 @@ Après installation :
 podman image save b8604a3fe854 -o docker.io_library_registry_2.7.1.tar docker.io/library/registry:2.7.1
 scp -r -p docker.io_library_registry_2.7.1.tar core@master.manager.colbert.def:/var/tmp
 ~~~
+
+- TO DO :
+  - PKI
+  - cert TLS pour local registry
+  - ajout cert CA à openshift SNO
+  - imagecontentsourcepolicy sur ce registry
+
+- copier images mirror Openshift sur ce registry + images longhorn + ?
