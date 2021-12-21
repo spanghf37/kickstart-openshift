@@ -48,6 +48,12 @@ skopeo sync --dest-tls-verify=false --authfile pull-secret.json --all --src yaml
 
 JETSON NANO Microshift :
 
+Le fichier crio.conf n'existe pas dans /etc/crio/crio.conf. Cependant, créer le fichier dans /etc/crio/crio.conf et copier/coller:
+~~~
+[crio.image]
+global_auth_file = "/root/pull-secret.json"
+~~~
+
 https://community.ibm.com/community/user/publiccloud/blogs/alexei-karve/2021/11/23/microshift-2
 https://community.ibm.com/community/user/publiccloud/blogs/alexei-karve/2021/11/23/microshift-3
 
