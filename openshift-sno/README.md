@@ -16,7 +16,7 @@ scp -r -p docker.io_library_registry_2.7.1.tar core@master.manager.colbert.def:/
 ~~~
 
 - TO DO :
-  - PKI
+  - PKI (https://computingforgeeks.com/how-to-install-and-configure-freeipa-server-on-rhel-centos-8/)
   - cert TLS pour local registry
   - ajout cert CA à openshift SNO
   - imagecontentsourcepolicy sur ce registry
