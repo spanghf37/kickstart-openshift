@@ -32,9 +32,9 @@ Web console :
 ~~~
 oc create serviceaccount console -n kube-system
 oc create clusterrolebinding console --clusterrole=cluster-admin --serviceaccount=kube-system:console -n kube-system
-sa=\$(oc get serviceaccount console --namespace=kube-system -o jsonpath='{.imagePullSecrets[0].name}' -n kube-system)
-tokenname=\$(oc get secret \$sa -n kube-system -o jsonpath='{.metadata.ownerReferences[0].name}')
-sed -i "s/name: .* # console serviceaccount token/name: \$tokenname # console serviceaccount token/" 003-console-deployment.yaml
+sa=$(oc get serviceaccount console --namespace=kube-system -o jsonpath='{.imagePullSecrets[0].name}' -n kube-system)
+tokenname=$(oc get secret \$sa -n kube-system -o jsonpath='{.metadata.ownerReferences[0].name}')
+sed -i "s/name: .* # console serviceaccount token/name: $tokenname # console serviceaccount token/" 003-console-deployment.yaml
 ~~~
 
 curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.19.1/install.sh | bash -s v0.19.1
