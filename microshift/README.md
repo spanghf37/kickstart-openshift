@@ -37,6 +37,8 @@ tokenname=$(oc get secret $sa -n kube-system -o jsonpath='{.metadata.ownerRefere
 sed -i "s/name: .* # console serviceaccount token/name: $tokenname # console serviceaccount token/" 003-console-deployment.yaml
 ~~~
 
+Microshift: éditer script install.sh pour spécifier VERSION=4.8.0-0.microshift-2021-11-19-115908 (version fonctionnelle avec la console OKD)
+
 curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.19.1/install.sh | bash -s v0.19.1
 
 Mirror registry:
