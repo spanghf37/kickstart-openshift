@@ -5,6 +5,11 @@ Mise à jour mot de passe kubeadmin :
   
   oc patch secret -n kube-system kubeadmin --type json -p '[{"op": "replace", "path": "/data/kubeadmin", "value": "SECRET_DATA"}]'
 
+####
+SNO : si pas de LOGS des conteneurs, accepter les CSR:
+~~~
+oc get csr -o name | xargs oc adm certificate approve
+~~~
 
 ####
 Après installation :
